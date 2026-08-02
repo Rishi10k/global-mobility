@@ -1,0 +1,94 @@
+.header {
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 72px;
+
+    padding: 0 80px;
+
+    background: white;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #1565C0;
+
+}
+
+.logo mat-icon {
+
+    font-size: 34px;
+
+    width: 34px;
+
+    height: 34px;
+
+}
+
+nav {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+nav a {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+}
+
+.spacer {
+
+    flex: 1;
+
+}
+
+.spacer-small {
+
+    width: 20px;
+
+}
+
+button {
+
+    margin-left: 10px;
+
+}
+
+button:last-child {
+
+    background: #1565C0;
+
+    color: white;
+
+}
+
+button:last-child:hover {
+
+    background: #0D47A1;
+
+}
+
+.active {
+    color: #1565C0;
+    font-weight: 600;
+}
