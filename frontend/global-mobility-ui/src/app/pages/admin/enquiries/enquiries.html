@@ -1,0 +1,316 @@
+<section class="enquiries-page">
+
+    <!-- Page Header -->
+    <div class="page-header">
+
+        <div>
+            <span class="section-tag">Admin Panel</span>
+
+            <h1>Eligibility Enquiries</h1>
+
+            <p>
+                View, filter and manage all candidate eligibility enquiries.
+            </p>
+        </div>
+
+        <button
+            mat-raised-button
+            color="primary"
+            class="export-btn">
+
+            <mat-icon>download</mat-icon>
+
+            Export Excel
+
+        </button>
+
+    </div>
+
+
+    <!-- Filters -->
+    <mat-card class="filter-card">
+
+        <div class="filter-header">
+
+            <div>
+                <h2>Search Enquiries</h2>
+
+                <p>
+                    Filter enquiries by name, mobile number, email or status.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="filters">
+
+            <!-- Name -->
+            <mat-form-field appearance="outline">
+
+                <mat-label>Name</mat-label>
+
+                <input
+                    matInput
+                    placeholder="Search by name"
+                    [(ngModel)]="name">
+
+                <mat-icon matSuffix>person</mat-icon>
+
+            </mat-form-field>
+
+
+            <!-- Phone -->
+            <mat-form-field appearance="outline">
+
+                <mat-label>Mobile Number</mat-label>
+
+                <input
+                    matInput
+                    placeholder="Search by mobile"
+                    [(ngModel)]="phone">
+
+                <mat-icon matSuffix>phone</mat-icon>
+
+            </mat-form-field>
+
+
+            <!-- Email -->
+            <mat-form-field appearance="outline">
+
+                <mat-label>Email</mat-label>
+
+                <input
+                    matInput
+                    type="email"
+                    placeholder="Search by email"
+                    [(ngModel)]="email">
+
+                <mat-icon matSuffix>email</mat-icon>
+
+            </mat-form-field>
+
+
+            <!-- Status -->
+            <mat-form-field appearance="outline">
+
+                <mat-label>Status</mat-label>
+
+                <mat-select [(ngModel)]="status">
+
+                    <mat-option value="">
+                        All
+                    </mat-option>
+
+                    <mat-option value="Pending">
+                        Pending
+                    </mat-option>
+
+                    <mat-option value="Interested">
+                        Interested
+                    </mat-option>
+
+                    <mat-option value="Not Interested">
+                        Not Interested
+                    </mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+
+        </div>
+
+
+        <!-- Filter Buttons -->
+        <div class="filter-actions">
+
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="search()">
+
+                <mat-icon>search</mat-icon>
+
+                Search
+
+            </button>
+
+
+            <button
+                mat-stroked-button
+                (click)="resetFilters()">
+
+                <mat-icon>refresh</mat-icon>
+
+                Reset
+
+            </button>
+
+        </div>
+
+    </mat-card>
+
+
+    <!-- Results -->
+    <mat-card class="table-card">
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>Enquiries</h2>
+
+                <span class="record-count">
+                    {{ enquiries.length }} records
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Table Wrapper -->
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Age</th>
+
+                        <th>Country</th>
+
+                        <th>Education</th>
+
+                        <th>Occupation</th>
+
+                        <th>Experience</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>IELTS / PTE</th>
+
+                        <th>Status</th>
+
+                        <th>Created On</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr *ngFor="let enquiry of enquiries">
+
+                        <td>
+                            {{ enquiry.id }}
+                        </td>
+
+                        <td class="name-cell">
+                            {{ enquiry.fullName }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.age }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.countryPreference }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.highestEducation }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.occupation }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.workExperience }} years
+                        </td>
+
+                        <td>
+                            {{ enquiry.email }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.phone }}
+                        </td>
+
+                        <td>
+                            {{ enquiry.ieltsScore || '-' }}
+                        </td>
+
+                        <td>
+
+                            <mat-form-field
+                                appearance="outline"
+                                class="status-field">
+
+                                <mat-select
+                                    [value]="enquiry.status"
+                                    (selectionChange)="updateStatus(enquiry, $event.value)">
+
+                                    <mat-option value="Pending">
+                                        Pending
+                                    </mat-option>
+
+                                    <mat-option value="Interested">
+                                        Interested
+                                    </mat-option>
+
+                                    <mat-option value="Not Interested">
+                                        Not Interested
+                                    </mat-option>
+
+                                </mat-select>
+
+                            </mat-form-field>
+
+                        </td>
+
+                        <td>
+                            {{ enquiry.createdOn | date:'dd/MM/yyyy HH:mm' }}
+                        </td>
+
+                    </tr>
+
+
+                    <!-- No Records -->
+                    <tr *ngIf="enquiries.length === 0">
+
+                        <td
+                            colspan="12"
+                            class="no-records">
+
+                            <mat-icon>search_off</mat-icon>
+
+                            <h3>No enquiries found</h3>
+
+                            <p>
+                                Try changing your search filters.
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </mat-card>
+
+</section>

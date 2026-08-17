@@ -1,0 +1,140 @@
+<section class="admin-login-page">
+
+    <mat-card class="login-card">
+
+        <!-- Logo / Brand -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <mat-icon>public</mat-icon>
+
+            </div>
+
+            <h1>VisaBiza</h1>
+
+            <span>Admin Portal</span>
+
+        </div>
+
+
+        <!-- Heading -->
+
+        <div class="login-header">
+
+            <h2>Admin Login</h2>
+
+            <p>
+                Sign in to manage eligibility enquiries.
+            </p>
+
+        </div>
+
+
+        <!-- Login Form -->
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+
+            <!-- Username -->
+
+            <mat-form-field appearance="outline" class="full-width">
+
+                <mat-label>Username</mat-label>
+
+                <mat-icon matPrefix>
+                    person
+                </mat-icon>
+
+                <input matInput type="text" formControlName="username" placeholder="Enter username">
+
+
+                <mat-error *ngIf="
+                        loginForm.get('username')?.hasError('required')
+                    ">
+
+                    Username is required.
+
+                </mat-error>
+
+            </mat-form-field>
+
+
+            <!-- Password -->
+
+            <mat-form-field appearance="outline" class="full-width">
+
+                <mat-label>Password</mat-label>
+
+                <mat-icon matPrefix>
+                    lock
+                </mat-icon>
+
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+                    placeholder="Enter password">
+
+
+                <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="
+                        hidePassword
+                            ? 'Show password'
+                            : 'Hide password'
+                    ">
+
+                    <mat-icon>
+
+                        {{
+                        hidePassword
+                        ? 'visibility'
+                        : 'visibility_off'
+                        }}
+
+                    </mat-icon>
+
+                </button>
+
+
+                <mat-error *ngIf="
+                        loginForm.get('password')?.hasError('required')
+                    ">
+
+                    Password is required.
+
+                </mat-error>
+
+            </mat-form-field>
+
+            <div class="login-error" *ngIf="loginError">
+
+                {{ loginError }}
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button mat-raised-button color="primary" type="submit" class="login-button" [disabled]="loginForm.invalid">
+
+                <mat-icon>login</mat-icon>
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <!-- Footer -->
+
+        <div class="login-footer">
+
+            <span>
+                Admin access only
+            </span>
+
+        </div>
+
+    </mat-card>
+
+</section>

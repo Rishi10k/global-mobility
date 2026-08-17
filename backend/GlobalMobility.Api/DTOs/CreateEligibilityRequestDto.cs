@@ -1,9 +1,7 @@
-﻿namespace GlobalMobility.Api.Entities;
+﻿namespace GlobalMobility.Api.DTOs;
 
-public class CandidateEligibility
+public class CreateEligibilityRequestDto
 {
-    public int Id { get; set; }
-
     public string FullName { get; set; } = string.Empty;
 
     public int Age { get; set; }
@@ -21,10 +19,4 @@ public class CandidateEligibility
     public string Phone { get; set; } = string.Empty;
 
     public string? IeltsScore { get; set; }
-
-    public string? ResumeUrl { get; set; }
-
-    public string Status { get; set; } = "Pending";
-
-    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 }

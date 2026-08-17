@@ -5,5 +5,5 @@ namespace GlobalMobility.Api.Interfaces;
 
 public interface IEligibilityService
 {
-    Task<CandidateEligibility> CreateAsync(CreateEligibilityRequest request);
+    Task<CandidateEligibility> CreateAsync(CreateEligibilityRequestDto request);
 }

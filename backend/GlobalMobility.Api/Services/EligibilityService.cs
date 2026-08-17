@@ -13,7 +13,7 @@ public class EligibilityService : IEligibilityService
         _repository = repository;
     }
 
-    public async Task<CandidateEligibility> CreateAsync(CreateEligibilityRequest request)
+    public async Task<CandidateEligibility> CreateAsync(CreateEligibilityRequestDto request)
     {
         var candidate = new CandidateEligibility
         {

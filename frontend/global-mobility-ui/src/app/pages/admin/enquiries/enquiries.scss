@@ -1,0 +1,452 @@
+.enquiries-page {
+
+    min-height: 100vh;
+
+    padding: 50px 6%;
+
+    background: #f8f9fc;
+
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+
+    max-width: 1400px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+.section-tag {
+
+    display: inline-block;
+
+    background: #e3f2fd;
+
+    color: #1565c0;
+
+    padding: 7px 16px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+}
+
+.page-header h1 {
+
+    margin: 0 0 10px;
+
+    font-size: 36px;
+
+    color: #0d47a1;
+
+    font-weight: 700;
+
+}
+
+.page-header p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================
+   EXPORT BUTTON
+========================================= */
+
+.export-btn {
+
+    min-width: 160px;
+
+    height: 48px;
+
+    font-size: 15px;
+
+}
+
+.export-btn mat-icon {
+
+    margin-right: 7px;
+
+}
+
+
+/* =========================================
+   FILTER CARD
+========================================= */
+
+.filter-card {
+
+    max-width: 1400px;
+
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+}
+
+.filter-header {
+
+    margin-bottom: 25px;
+
+}
+
+.filter-header h2 {
+
+    margin: 0 0 6px;
+
+    color: #0d47a1;
+
+    font-size: 22px;
+
+}
+
+.filter-header p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   FILTER INPUTS
+========================================= */
+
+.filters {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+.filters mat-form-field {
+
+    width: 100%;
+
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.filter-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+}
+
+.filter-actions button {
+
+    min-width: 120px;
+
+    height: 44px;
+
+}
+
+.filter-actions mat-icon {
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================
+   TABLE CARD
+========================================= */
+
+.table-card {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+}
+
+.table-header {
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.table-header h2 {
+
+    margin: 0 0 5px;
+
+    color: #0d47a1;
+
+    font-size: 22px;
+
+}
+
+.record-count {
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+table {
+
+    width: 100%;
+
+    min-width: 1500px;
+
+    border-collapse: collapse;
+
+}
+
+thead {
+
+    background: #0d47a1;
+
+}
+
+th {
+
+    padding: 15px 14px;
+
+    color: white;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+td {
+
+    padding: 13px 14px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #444;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+}
+
+tbody tr:hover {
+
+    background: #f5f9ff;
+
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.name-cell {
+
+    font-weight: 600;
+
+    color: #1565c0;
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-field {
+
+    width: 150px;
+
+    margin-top: 10px;
+
+}
+
+.status-field .mat-mdc-form-field-subscript-wrapper {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   NO RECORDS
+========================================= */
+
+.no-records {
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #777;
+
+}
+
+.no-records mat-icon {
+
+    font-size: 50px;
+
+    width: 50px;
+
+    height: 50px;
+
+    color: #aaa;
+
+}
+
+.no-records h3 {
+
+    margin: 15px 0 5px;
+
+    color: #555;
+
+}
+
+.no-records p {
+
+    margin: 0;
+
+    color: #888;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .page-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+    .export-btn {
+
+        width: 100%;
+
+    }
+
+    .filters {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .enquiries-page {
+
+        padding: 30px 15px;
+
+    }
+
+    .page-header h1 {
+
+        font-size: 28px;
+
+    }
+
+    .filter-card {
+
+        padding: 20px;
+
+    }
+
+    .filters {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .filter-actions {
+
+        flex-direction: column;
+
+    }
+
+    .filter-actions button {
+
+        width: 100%;
+
+    }
+
+}

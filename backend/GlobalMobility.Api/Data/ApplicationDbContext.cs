@@ -11,4 +11,5 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<CandidateEligibility> CandidateEligibilities { get; set; }
+    public DbSet<Admin> Admins { get; set; }
 }
