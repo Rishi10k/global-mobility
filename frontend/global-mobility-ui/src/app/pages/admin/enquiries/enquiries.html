@@ -13,10 +13,7 @@
             </p>
         </div>
 
-        <button
-            mat-raised-button
-            color="primary"
-            class="export-btn">
+        <button mat-raised-button color="primary" class="export-btn" (click)="exportExcel()">
 
             <mat-icon>download</mat-icon>
 
@@ -50,10 +47,7 @@
 
                 <mat-label>Name</mat-label>
 
-                <input
-                    matInput
-                    placeholder="Search by name"
-                    [(ngModel)]="name">
+                <input matInput placeholder="Search by name" [(ngModel)]="name">
 
                 <mat-icon matSuffix>person</mat-icon>
 
@@ -65,10 +59,7 @@
 
                 <mat-label>Mobile Number</mat-label>
 
-                <input
-                    matInput
-                    placeholder="Search by mobile"
-                    [(ngModel)]="phone">
+                <input matInput placeholder="Search by mobile" [(ngModel)]="phone">
 
                 <mat-icon matSuffix>phone</mat-icon>
 
@@ -80,11 +71,7 @@
 
                 <mat-label>Email</mat-label>
 
-                <input
-                    matInput
-                    type="email"
-                    placeholder="Search by email"
-                    [(ngModel)]="email">
+                <input matInput type="email" placeholder="Search by email" [(ngModel)]="email">
 
                 <mat-icon matSuffix>email</mat-icon>
 
@@ -124,10 +111,7 @@
         <!-- Filter Buttons -->
         <div class="filter-actions">
 
-            <button
-                mat-raised-button
-                color="primary"
-                (click)="search()">
+            <button mat-raised-button color="primary" (click)="search()">
 
                 <mat-icon>search</mat-icon>
 
@@ -136,9 +120,7 @@
             </button>
 
 
-            <button
-                mat-stroked-button
-                (click)="resetFilters()">
+            <button mat-stroked-button (click)="resetFilters()">
 
                 <mat-icon>refresh</mat-icon>
 
@@ -253,12 +235,9 @@
 
                         <td>
 
-                            <mat-form-field
-                                appearance="outline"
-                                class="status-field">
+                            <mat-form-field appearance="outline" class="status-field">
 
-                                <mat-select
-                                    [value]="enquiry.status"
+                                <mat-select [value]="enquiry.status"
                                     (selectionChange)="updateStatus(enquiry, $event.value)">
 
                                     <mat-option value="Pending">
@@ -289,9 +268,7 @@
                     <!-- No Records -->
                     <tr *ngIf="enquiries.length === 0">
 
-                        <td
-                            colspan="12"
-                            class="no-records">
+                        <td colspan="12" class="no-records">
 
                             <mat-icon>search_off</mat-icon>
 

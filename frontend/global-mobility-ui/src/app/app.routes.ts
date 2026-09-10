@@ -11,6 +11,7 @@ import { Contact } from './pages/contact/contact';
 
 import { AdminLogin } from './pages/admin/admin-login/admin-login';
 import { Enquiries } from './pages/admin/enquiries/enquiries';
+import { authGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
@@ -75,7 +76,8 @@ export const routes: Routes = [
 
       {
         path: 'enquiries',
-        component: Enquiries
+        component: Enquiries,
+        canActivate: [authGuard]
       }
 
     ]

@@ -87,7 +87,7 @@ export class Enquiries implements OnInit {
 
   constructor(
     private eligibilityService: EligibilityService
-  ) {}
+  ) { }
 
 
   // ==========================================
@@ -252,6 +252,50 @@ export class Enquiries implements OnInit {
 
       });
 
+  }
+
+  exportExcel(): void {
+
+    this.eligibilityService.exportEnquiries(
+      this.name,
+      this.phone,
+      this.email,
+      this.status
+    ).subscribe({
+
+      next: (blob: Blob) => {
+
+        const url =
+          window.URL.createObjectURL(blob);
+
+        const link =
+          document.createElement('a');
+
+        link.href = url;
+
+        link.download =
+          `EligibilityEnquiries_${new Date()
+            .toISOString()
+            .slice(0, 10)}.xlsx`;
+
+        link.click();
+
+        window.URL.revokeObjectURL(url);
+      },
+
+      error: (error) => {
+
+        console.error(
+          'Error exporting enquiries:',
+          error
+        );
+
+        alert(
+          'Unable to export enquiries.'
+        );
+      }
+
+    });
   }
 
 }

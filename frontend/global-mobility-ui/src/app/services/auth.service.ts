@@ -8,7 +8,8 @@ export interface LoginRequest {
 }
 
 export interface LoginResponse {
-  message: string;
+  token: string;
+  username: string;
 }
 
 @Injectable({
@@ -16,14 +17,17 @@ export interface LoginResponse {
 })
 export class AuthService {
 
-  private apiUrl = 'https://localhost:7051/api/Auth';
+  private apiUrl =
+    'https://localhost:7051/api/Auth';
 
   constructor(
     private http: HttpClient
   ) {}
 
 
-  login(request: LoginRequest): Observable<LoginResponse> {
+  login(
+    request: LoginRequest
+  ): Observable<LoginResponse> {
 
     return this.http
       .post<LoginResponse>(
@@ -32,28 +36,23 @@ export class AuthService {
       )
       .pipe(
 
-        tap(() => {
-
-          // Temporary authentication state.
-          // We will replace this with JWT storage
-          // in the next step.
+        tap(response => {
 
           localStorage.setItem(
-            'adminLoggedIn',
-            'true'
+            'adminToken',
+            response.token
           );
 
         })
 
       );
-
   }
 
 
   logout(): void {
 
     localStorage.removeItem(
-      'adminLoggedIn'
+      'adminToken'
     );
 
   }
@@ -61,9 +60,18 @@ export class AuthService {
 
   isLoggedIn(): boolean {
 
+    return !!localStorage.getItem(
+      'adminToken'
+    );
+
+  }
+
+
+  getToken(): string | null {
+
     return localStorage.getItem(
-      'adminLoggedIn'
-    ) === 'true';
+      'adminToken'
+    );
 
   }
 

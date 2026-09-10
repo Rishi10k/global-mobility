@@ -1,12 +1,14 @@
 ﻿using ClosedXML.Excel;
 using GlobalMobility.Api.DTOs;
 using GlobalMobility.Api.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GlobalMobility.Api.Controllers;
 
 [ApiController]
 [Route("api/admin/eligibilities")]
+[Authorize(Roles = "Admin")]
 public class AdminEligibilityController : ControllerBase
 {
     private readonly IEligibilityRepository _repository;
