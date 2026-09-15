@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "global-mobility-ui",
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "./dist/global-mobility-ui/browser",
+    "not_found_handling": "single-page-application"
+  }
+}
