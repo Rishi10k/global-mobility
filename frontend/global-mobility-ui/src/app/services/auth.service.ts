@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environmentLive } from '../../environments/environment';
 
 export interface LoginRequest {
   username: string;
@@ -19,7 +19,7 @@ export interface LoginResponse {
 export class AuthService {
 
   private apiUrl =
-    `${environment.apiUrl}/Auth`;
+    `${environmentLive.apiUrl}/Auth`;
 
   constructor(
     private http: HttpClient

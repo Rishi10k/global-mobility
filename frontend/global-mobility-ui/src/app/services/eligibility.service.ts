@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environmentLive } from '../../environments/environment';
 
 export interface EligibilityRequest {
     fullName: string;
@@ -38,11 +38,11 @@ export class EligibilityService {
 
     // Public API
     private apiUrl =
-        `${environment.apiUrl}/Eligibility`;
+        `${environmentLive.apiUrl}/Eligibility`;
 
     // Admin API
     private adminApiUrl =
-        `${environment.apiUrl}/admin/eligibilities`;
+        `${environmentLive.apiUrl}/admin/eligibilities`;
 
     constructor(
         private http: HttpClient
