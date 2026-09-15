@@ -43,7 +43,7 @@ builder.Services.AddAuthorization();
 
 // Database Context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
+    options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // CORS Configuration (Allows Angular frontend to talk to this API)
