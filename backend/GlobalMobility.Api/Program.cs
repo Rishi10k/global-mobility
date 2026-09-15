@@ -51,7 +51,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins("http://localhost:4200") // Update this port if your Angular runs on a different port
+        policy.WithOrigins(
+            "http://localhost:4200",
+            "https://global-mobility-ui.rishisinghrc3.workers.dev"
+            ) // Update this port if your Angular runs on a different port
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
