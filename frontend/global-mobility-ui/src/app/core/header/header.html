@@ -7,40 +7,103 @@
 
     <span class="spacer"></span>
 
-    <nav>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
 
-        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a mat-button
+           routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }">
             Home
         </a>
 
-        <a mat-button routerLink="/jobs" routerLinkActive="active">
+        <a mat-button
+           routerLink="/jobs"
+           routerLinkActive="active">
             Jobs
         </a>
 
-        <a mat-button routerLink="/countries" routerLinkActive="active">
+        <a mat-button
+           routerLink="/countries"
+           routerLinkActive="active">
             Countries
         </a>
 
-        <a mat-button routerLink="/services" routerLinkActive="active">
+        <a mat-button
+           routerLink="/services"
+           routerLinkActive="active">
             Services
         </a>
 
-        <a mat-button routerLink="/about" routerLinkActive="active">
+        <a mat-button
+           routerLink="/about"
+           routerLinkActive="active">
             About
         </a>
 
     </nav>
 
-    <span class="spacer-small"></span>
 
-    <!-- <div class="auth-buttons">
-        <button mat-stroked-button color="primary">
-            Login
-        </button>
+    <!-- Mobile Menu -->
+    <button
+        mat-icon-button
+        class="mobile-menu-button"
+        [matMenuTriggerFor]="mobileMenu"
+        aria-label="Open navigation menu">
 
-        <button mat-flat-button color="primary">
-            Register
-        </button>
-    </div> -->
+        <mat-icon>menu</mat-icon>
+
+    </button>
+
+
+    <mat-menu #mobileMenu="matMenu">
+
+        <a mat-menu-item
+           routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }">
+
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+
+        </a>
+
+        <a mat-menu-item
+           routerLink="/jobs"
+           routerLinkActive="active">
+
+            <mat-icon>work</mat-icon>
+            <span>Jobs</span>
+
+        </a>
+
+        <a mat-menu-item
+           routerLink="/countries"
+           routerLinkActive="active">
+
+            <mat-icon>public</mat-icon>
+            <span>Countries</span>
+
+        </a>
+
+        <a mat-menu-item
+           routerLink="/services"
+           routerLinkActive="active">
+
+            <mat-icon>business_center</mat-icon>
+            <span>Services</span>
+
+        </a>
+
+        <a mat-menu-item
+           routerLink="/about"
+           routerLinkActive="active">
+
+            <mat-icon>info</mat-icon>
+            <span>About</span>
+
+        </a>
+
+    </mat-menu>
 
 </mat-toolbar>

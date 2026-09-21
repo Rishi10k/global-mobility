@@ -1,219 +1,144 @@
 .admin-login-page {
-
     min-height: 100vh;
-
+    min-height: 100dvh;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     padding: 30px;
-
-    background: linear-gradient(
-        135deg,
-        #e3f2fd,
-        #f8f9fc
-    );
-
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #e3f2fd, #f8f9fc);
 }
-
-
-/* =========================================
-   LOGIN CARD
-========================================= */
-
 .login-card {
-
     width: 100%;
-
     max-width: 430px;
-
     padding: 40px;
-
+    box-sizing: border-box;
     border-radius: 20px;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.10);
-
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
 }
-
-
-/* =========================================
-   BRAND
-========================================= */
-
 .brand {
-
     text-align: center;
-
     margin-bottom: 30px;
-
 }
-
 .brand-icon {
-
     width: 64px;
-
     height: 64px;
-
     margin: 0 auto 15px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 50%;
-
     background: #0d47a1;
-
     color: white;
-
 }
-
 .brand-icon mat-icon {
-
     font-size: 32px;
-
     width: 32px;
-
     height: 32px;
-
 }
-
 .brand h1 {
-
     margin: 0;
-
     color: #0d47a1;
-
     font-size: 28px;
-
     font-weight: 700;
-
 }
-
 .brand span {
-
     display: block;
-
     margin-top: 5px;
-
     color: #777;
-
     font-size: 14px;
-
 }
-
-
-/* =========================================
-   HEADER
-========================================= */
-
 .login-header {
-
     text-align: center;
-
     margin-bottom: 30px;
-
 }
-
 .login-header h2 {
-
     margin: 0 0 8px;
-
     color: #222;
-
     font-size: 24px;
-
 }
-
 .login-header p {
-
     margin: 0;
-
     color: #777;
-
     font-size: 14px;
-
+    line-height: 1.5;
 }
-
-
-/* =========================================
-   FORM
-========================================= */
-
 .full-width {
-
     width: 100%;
-
     margin-bottom: 10px;
-
 }
-
-
-/* =========================================
-   LOGIN BUTTON
-========================================= */
-
 .login-button {
-
     width: 100%;
-
     height: 48px;
-
     margin-top: 10px;
-
     font-size: 15px;
-
 }
-
 .login-button mat-icon {
-
     margin-right: 7px;
-
 }
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
 .login-footer {
-
     text-align: center;
-
     margin-top: 25px;
-
     padding-top: 20px;
-
     border-top: 1px solid #eee;
-
     color: #999;
-
     font-size: 13px;
-
 }
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
+.login-error {
+    color: #d32f2f;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0 10px;
+}
 @media (max-width: 500px) {
-
     .admin-login-page {
-
-        padding: 20px;
-
+        padding: 20px 15px;
     }
-
     .login-card {
-
         padding: 30px 20px;
-
+        border-radius: 16px;
     }
-
+    .brand {
+        margin-bottom: 25px;
+    }
+    .brand-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 12px;
+    }
+    .brand-icon mat-icon {
+        font-size: 29px;
+        width: 29px;
+        height: 29px;
+    }
+    .brand h1 {
+        font-size: 25px;
+    }
+    .login-header {
+        margin-bottom: 25px;
+    }
+    .login-header h2 {
+        font-size: 22px;
+    }
+    .login-header p {
+        font-size: 13px;
+    }
+}
+@media (max-width: 360px) {
+    .admin-login-page {
+        padding: 15px 10px;
+    }
+    .login-card {
+        padding: 25px 16px;
+        border-radius: 14px;
+    }
+    .brand h1 {
+        font-size: 23px;
+    }
+    .login-header h2 {
+        font-size: 20px;
+    }
+    .login-button {
+        height: 46px;
+    }
 }

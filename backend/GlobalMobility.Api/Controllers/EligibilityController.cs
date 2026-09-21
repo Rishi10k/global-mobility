@@ -25,20 +25,20 @@ public class EligibilityController : ControllerBase
         var result = await _eligibilityService.CreateAsync(request);
 
         //Trigger the email sending process
-        //try
-        //{
-        //    await _emailService.SendEligibilityConfirmationAsync(
-        //        request.Email,
-        //        request.FullName,
-        //        request.CountryPreference
-        //    );
-        //}
-        //catch (Exception ex)
-        //{
-        //    // Optional: Log the error. 
-        //    // We usually don't throw an error here because the data was already saved successfully.
-        //    Console.WriteLine($"Email sending failed: {ex.Message}");
-        //}
+        try
+        {
+            await _emailService.SendEligibilityConfirmationAsync(
+                request.Email,
+                request.FullName,
+                request.CountryPreference
+            );
+        }
+        catch (Exception ex)
+        {
+            // Optional: Log the error. 
+            // We usually don't throw an error here because the data was already saved successfully.
+            Console.WriteLine($"Email sending failed: {ex.Message}");
+        }
 
         return Ok(result);
     }

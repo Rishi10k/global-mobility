@@ -1,86 +1,48 @@
 <section class="eligibility-section">
-
     <div class="section-header">
-
         <h2>Check Your Eligibility</h2>
-
-        <p>
-            Complete the form below and our immigration experts will review your profile and contact you with the best
-            options.
-        </p>
-
+        <p>Complete the form below and our immigration experts will review your profile and contact you with the best options.</p>
     </div>
-
     <mat-card class="eligibility-card">
-
         <form [formGroup]="eligibilityForm" (ngSubmit)="onSubmit()">
-
             <div class="form-grid">
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Full Name</mat-label>
-
                     <input matInput formControlName="fullName" placeholder="Enter your full name">
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Age</mat-label>
-
                     <input matInput type="number" formControlName="age">
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Country Preference</mat-label>
-
                     <mat-select formControlName="countryPreference">
-
                         <mat-option value="Canada">Canada</mat-option>
                         <mat-option value="Australia">Australia</mat-option>
                         <mat-option value="Germany">Germany</mat-option>
                         <mat-option value="United Kingdom">United Kingdom</mat-option>
                         <mat-option value="United States">United States</mat-option>
                         <mat-option value="Dubai">Dubai</mat-option>
-
                     </mat-select>
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Highest Education</mat-label>
-
                     <mat-select formControlName="highestEducation">
-
                         <mat-option value="10th">10th</mat-option>
                         <mat-option value="12th">12th</mat-option>
                         <mat-option value="Diploma">Diploma</mat-option>
                         <mat-option value="Bachelor's Degree">Bachelor's Degree</mat-option>
                         <mat-option value="Master's Degree">Master's Degree</mat-option>
                         <mat-option value="PhD">PhD</mat-option>
-
                     </mat-select>
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Current Occupation</mat-label>
-
                     <input matInput formControlName="occupation" placeholder="Software Engineer">
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Work Experience</mat-label>
-
                     <mat-select formControlName="workExperience">
-
                         <mat-option value="0">0 Years</mat-option>
                         <mat-option value="1">1 Year</mat-option>
                         <mat-option value="2">2 Years</mat-option>
@@ -88,71 +50,32 @@
                         <mat-option value="4">4 Years</mat-option>
                         <mat-option value="5">5+ Years</mat-option>
                         <mat-option value="10">10+ Years</mat-option>
-
                     </mat-select>
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Email Address</mat-label>
-
                     <input matInput type="email" formControlName="email">
-
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-
                     <mat-label>Phone Number</mat-label>
-
                     <input matInput formControlName="phone">
-
                 </mat-form-field>
-
             </div>
-
             <mat-form-field appearance="outline" class="full-width">
-
                 <mat-label>IELTS / PTE Score (Optional)</mat-label>
-
                 <input matInput formControlName="ieltsScore" placeholder="Example: IELTS 7.5">
-
             </mat-form-field>
-
             <div class="upload-box">
-
                 <mat-icon>cloud_upload</mat-icon>
-
                 <h3>Upload Resume (Optional)</h3>
-
                 <p>PDF, DOC or DOCX (Maximum 5 MB)</p>
-
                 <input type="file" hidden #resumeInput accept=".pdf,.doc,.docx" (change)="onFileSelected($event)">
-
-                <button mat-stroked-button type="button" (click)="resumeInput.click()">
-
-                    Choose File
-
-                </button>
-
-                <p class="selected-file" *ngIf="selectedResume">
-                    Selected File: {{ selectedResume.name }}
-                </p>
-
+                <button mat-stroked-button type="button" (click)="resumeInput.click()">Choose File</button>
+                <p class="selected-file" *ngIf="selectedResume">Selected File: {{ selectedResume.name }}</p>
             </div>
-
             <div class="submit-btn">
-
-                <button mat-raised-button color="primary" type="submit" [disabled]="eligibilityForm.invalid">
-
-                    Check Eligibility
-
-                </button>
-
+                <button mat-raised-button color="primary" type="submit" [disabled]="eligibilityForm.invalid">Check Eligibility</button>
             </div>
-
         </form>
-
     </mat-card>
-
 </section>
